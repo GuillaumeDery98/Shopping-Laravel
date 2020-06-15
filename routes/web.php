@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
@@ -38,3 +35,6 @@ Route::prefix('passe')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::name('produits.show')->get('produits/{produit}', 'ProductController');
+Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);

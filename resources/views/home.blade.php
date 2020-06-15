@@ -1,22 +1,29 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+
+    <div class="row">
+        <div class="col s12 cards-container">
+            @foreach($products as $product)
             <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                <div class="card-image">
+                    @if($product->quantity)
+                    <a href="#">
+                        @endif
+                        <img src="/images/thumbs/{{ $product->image }}">
+                        @if($product->quantity) </a> @endif
+                </div>
+                <div class="card-content center-align">
+                    <p><a href="{{ route('produits.show', $product->id) }}">{{ $product->name }}</a></p>
+                    @if($product->quantity)
+                    <p><strong>{{ number_format($product->price, 2, ',', ' ') }} € TTC</strong></p>
+                    @else
+                    <p class="red-text"><strong>Produit en rupture de stock</strong></p>
                     @endif
-
-                    You are logged in!
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
