@@ -15,9 +15,10 @@ class ProductController extends Controller
      */
     public function __invoke(Request $request, Product $produit)
     {
-        if ($produit->active || $request->user()->admin) {
+        if($produit->active || $request->user()->admin) {
             return view('products.show', compact('produit'));
         }
+
         return redirect(route('home'));
     }
 }

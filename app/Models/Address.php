@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     protected $fillable = [
-        'name',
+        'name', 
         'firstname',
         'professionnal',
         'civility',
@@ -24,5 +24,5 @@ class Address extends Model
     public function country()
     {
         return $this->belongsTo(Country::class);
-    }
+    }   
 }

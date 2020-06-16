@@ -5393,9 +5393,9 @@ small {
 .btn-small[disabled],
 .btn-flat[disabled] {
   pointer-events: none;
-  background-color: #dfdfdf !important;
+  background-color: #DFDFDF !important;
   box-shadow: none;
-  color: #9f9f9f !important;
+  color: #9F9F9F !important;
   cursor: default;
 }
 
@@ -5414,8 +5414,8 @@ small {
 .btn-large[disabled]:hover,
 .btn-small[disabled]:hover,
 .btn-flat[disabled]:hover {
-  background-color: #dfdfdf !important;
-  color: #9f9f9f !important;
+  background-color: #DFDFDF !important;
+  color: #9F9F9F !important;
 }
 
 .btn,
@@ -6271,6 +6271,10 @@ label {
    ========================================================================== */
 
 /* Style Placeholders */
+
+::-webkit-input-placeholder {
+  color: #d1d1d1;
+}
 
 ::-moz-placeholder {
   color: #d1d1d1;
@@ -7232,7 +7236,7 @@ textarea.materialize-textarea {
 }
 
 .switch label .lever:after {
-  background-color: #f1f1f1;
+  background-color: #F1F1F1;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -9163,6 +9167,10 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem;
   }
+}
+
+main {
+  padding-top: 40px;
 }
 
 body {

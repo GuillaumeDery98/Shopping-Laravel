@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Range extends Model
 {
-    protected $fillable = ['max',];
+    protected $fillable = [ 'max', ];
+
     public $timestamps = false;
 
     public function countries()

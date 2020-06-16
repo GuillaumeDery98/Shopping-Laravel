@@ -126,9 +126,9 @@ module.exports = g;
 
 __webpack_require__(/*! ./materialize.js */ "./resources/js/materialize.js");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   M.AutoInit();
-  var elems = document.querySelectorAll(".tooltipped");
+  var elems = document.querySelectorAll('.tooltipped');
   M.Tooltip.init(elems);
 });
 
@@ -13080,8 +13080,8 @@ var $jscomp$this = this;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/shopping/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/code/shopping/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\laragon\www\shopping\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\laragon\www\shopping\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

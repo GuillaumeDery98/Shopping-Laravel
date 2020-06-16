@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Auth::routes();
+// Accueil boutique et panier
+Route::get('/', 'HomeController@index')->name('home');
+Route::name('produits.show')->get('produits/{produit}', 'ProductController');
+Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
 
 Route::post('deconnexion', 'Auth\LoginController@logout')->name('logout');
 Route::middleware('guest')->group(function () {
@@ -35,6 +37,16 @@ Route::prefix('passe')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('home');
-Route::name('produits.show')->get('produits/{produit}', 'ProductController');
-Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
+
+// Utilisateur authentifié
+Route::middleware('auth')->group(function () {
+  // Commandes
+  Route::prefix('commandes')->group(function () {
+      Route::name('commandes.details')->post('details', 'DetailsController');
+      Route::name('commandes.confirmation')->get('confirmation/{order}', 'OrdersController@confirmation');
+      Route::resource('/', 'OrderController')->names([
+          'create' => 'commandes.create',
+          'store' => 'commandes.store',
+      ])->only(['create', 'store']);
+  });
+});

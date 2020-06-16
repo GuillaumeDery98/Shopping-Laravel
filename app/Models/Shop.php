@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Shop extends Model
 {
     protected $fillable = [
-        'name',
-        'address',
-        'email',
-        'holder',
-        'bic',
-        'iban',
-        'bank',
+        'name', 
+        'address', 
+        'email', 
+        'holder', 
+        'bic', 
+        'iban', 
+        'bank', 
         'bank_adresse',
         'phone',
         'facebook',
@@ -26,5 +26,6 @@ class Shop extends Model
         'check',
         'mandat',
     ];
+
     public $timestamps = false;
 }

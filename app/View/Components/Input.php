@@ -13,6 +13,7 @@ class Input extends Component
     public $required;
     public $autofocus;
     public $value;
+
     /**
      * Create a new component instance.
      *
@@ -28,6 +29,7 @@ class Input extends Component
         $this->required = $required;
         $this->autofocus = $autofocus;
     }
+
     /**
      * Get the view / contents that represent the component.
      *

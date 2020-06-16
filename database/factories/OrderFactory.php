@@ -4,8 +4,10 @@
 
 use App\Models\Order;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Order::class, function (Faker $faker) {
+  
     $pick = $faker->boolean();
     $payment = ['carte', 'mandat', 'virement', 'cheque'][mt_rand(0, 3)];
     if($payment === 'carte') {
@@ -27,7 +29,7 @@ $factory->define(Order::class, function (Faker $faker) {
         $invoice_id = null;
         $invoice_number = null;
     }
-
+    
     return [
         'reference' => strtoupper(Str::random(8)),
         'shipping' => $pick ? 0 : mt_rand (500, 1500) / 100,

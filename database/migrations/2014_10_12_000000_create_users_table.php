@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('newsletter');
             $table->boolean('admin')->default(false);
-            $table->timestamp('last_seen')->nullable();
+            $table->timestamp('last_seen')->nullable();    
             $table->rememberToken();
             $table->timestamps();
         });
